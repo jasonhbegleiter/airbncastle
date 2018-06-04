@@ -8,8 +8,8 @@ class CreateCastles < ActiveRecord::Migration[5.2]
       t.integer :no_of_guests
       t.integer :no_of_bedrooms
       t.integer :no_of_bathrooms
-      t.user :references
-      t.city :references
+      t.references :user, foreign_key: true
+      t.references :city, foreign_key: true
 
       t.timestamps
     end
