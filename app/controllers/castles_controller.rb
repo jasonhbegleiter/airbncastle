@@ -1,7 +1,7 @@
 class CastlesController < ApplicationController
     before_action :set_castle, only:[:destroy, :edit, :show, :update]
   def index
-    @castles = Castle.all.order({city: desc})
+    @castles = Castle.all.order(:city)
   end
 
   def show
@@ -12,8 +12,10 @@ class CastlesController < ApplicationController
   end
 
   def create
-    @castle = Castle.create!(castle_params)
-    redirect_to castle_path(@castle)
+    castle = Castle.new(castle_params)
+    castle.user = current_user
+    castle.save!
+    redirect_to castle_path(castle)
   end
 
   def edit
@@ -35,6 +37,7 @@ class CastlesController < ApplicationController
   end
 
   def castle_params
-    params.require(:castle).permit(:name, :summary, :price_per_night, :address, :no_of_guests, :no_of_bedrooms, :no_of_bathrooms, :city, :user)
+    params.require(:castle).permit(:name, :summary, :price_per_night, :address, :no_of_guests, :no_of_bedrooms, :no_of_bathrooms, :city_id)
+    # raise
   end
 end
