@@ -10,10 +10,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_04_085338) do
+ActiveRecord::Schema.define(version: 2018_06_04_112453) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "amenities", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "castle_amenities", force: :cascade do |t|
+    t.bigint "castle_id"
+    t.bigint "amenity_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["amenity_id"], name: "index_castle_amenities_on_amenity_id"
+    t.index ["castle_id"], name: "index_castle_amenities_on_castle_id"
+  end
+
+  create_table "castles", force: :cascade do |t|
+    t.string "name"
+    t.text "summary"
+    t.integer "price_per_night"
+    t.text "address"
+    t.integer "no_of_guests"
+    t.integer "no_of_bedrooms"
+    t.integer "no_of_bathrooms"
+    t.bigint "city_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_castles_on_city_id"
+    t.index ["user_id"], name: "index_castles_on_user_id"
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.bigint "country_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.index ["country_id"], name: "index_cities_on_country_id"
+  end
+
+  create_table "countries", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,4 +77,9 @@ ActiveRecord::Schema.define(version: 2018_06_04_085338) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "castle_amenities", "amenities"
+  add_foreign_key "castle_amenities", "castles"
+  add_foreign_key "castles", "cities"
+  add_foreign_key "castles", "users"
+  add_foreign_key "cities", "countries"
 end
