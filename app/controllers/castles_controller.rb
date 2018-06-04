@@ -1,7 +1,7 @@
 class CastlesController < ApplicationController
     before_action :set_castle, only:[:destroy, :edit, :show, :update]
   def index
-    @castles = Castle.all.order(:city)
+    @castles = Castle.all.order(:price_per_night)
   end
 
   def show
