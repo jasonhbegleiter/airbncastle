@@ -1,0 +1,32 @@
+<div class="bookings-banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%), url('http://www.cowboysrvmart.com/assets/bigstock-Abstract-Gold-Background-72064195-c-r.jpg');">
+  <div class="banner-content">
+    <h1>Your bookings</h1>
+    <p>with Airbncastle</p>
+  </div>
+</div>
+
+<div class="container">
+  <h1 class="text-left cards-header">Your regal escapes await</h1>
+  <div class="row">
+    <% @bookings.each do |booking| %>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), url('https://img.wennermedia.com/article-leads-horizontal/gettyimages-519322618-066e466f-deaa-4bed-ab2f-1c674bdb7b1c.jpg');">
+        <div class="card-category"><h5>ENTIRE CHATEAU</h5></div>
+        <div class="card-description">
+          <h3><%= booking.castle.name %></h3>
+          <p><%= booking.castle.address %></p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="footer-links">
+          <span><%= "#{booking.no_of_nights} nights   |" %></span>
+          <span><%= "#{booking.no_confirmed_guests} guests"%></span>
+        </div>
+        <p> <%= link_to "More info", booking_path(booking) %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+

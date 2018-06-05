@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-7 form-content">
+
+      <div class="content">
+        <div class="form-header">
+          <h3><%= "Let's get you booked into #{@castle.name.capitalize}" %></h3>
+        </div>
+        <p class="light-caps">STEP 1</p>
+        <%= render 'booking_form' %>
+
+      </div>
+
+    </div>
+    <div class="col-md-5">
+      <div class="picture-container">
+        <%= image_tag "castle_drawing.png", height: 50 %>
+
+      </div>
+    </div>
+  </div>
+</div>
+

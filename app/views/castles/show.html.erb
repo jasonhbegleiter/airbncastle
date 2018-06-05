@@ -1,33 +1,41 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%), url('<%= cl_image_path @castle.photo %>');">
-  <div class="banner-content">
-    <h1><%= @castle.name %></h1>
-  </div>
-  <div class="banner-button-wrapper">
-    <%= link_to edit_castle_path(@castle) do %>
+
+<div class="content">
+
+  <%= link_to "Book this Castle", new_castle_booking_path(@castle), class: "navbar-wagon-item navbar-wagon-link" %>
+
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%), url('<%= cl_image_path @castle.photo %>');">
+    <div class="banner-content">
+      <h1><%= @castle.name %></h1>
+    </div>
+    <div class="banner-button-wrapper">
+      <%= link_to edit_castle_path(@castle) do %>
       <button class="btn btn-primary" id="edit_castle"> Edit Castle</button>
-    <% end %>
-    <%= link_to castle_path, method: :delete,
-        data: { confirm: "Are you sure?" } do %>
+      <% end %>
+      <%= link_to castle_path, method: :delete,
+      data: { confirm: "Are you sure?" } do %>
       <button class="btn btn-primary" id="delete_castle">Delete Castle</button>
-    <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="show_wrapper">
+
+  </div>
+
+
+
+
+
+  <div class="container">
+    Name: <%= @castle.name %> <br>
+    Summary: <%= @castle.summary %> <br>
+    Price per night: <%= @castle.price_per_night %> <br>
+    <ul>
+
+      <% @castle.amenities.each do |a| %>
+      <li><%=  a.name %></li>
+      <% end %>
+    </ul>
+
   </div>
 </div>
-<div class="show_wrapper">
 
-</div>
-
-
-
-
-
-<div class="container">
-  Name: <%= @castle.name %> <br>
-  Summary: <%= @castle.summary %> <br>
-  Price per night: <%= @castle.price_per_night %> <br>
-  <ul>
-
-    <% @castle.amenities.each do |a| %>
-    <li><%=  a.name %></li>
-    <% end %>
-  </ul>
-</div>
