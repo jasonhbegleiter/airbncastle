@@ -1,24 +1,18 @@
 
-<%= simple_form_for(@castle) do |f| %>
+<%= simple_form_for (@castle) do |f| %>
 
-  <%= f.label :name %>
   <%= f.text_field :name  %>
-  <%= f.label :summary %>
   <%= f.text_field :summary  %>
-  <%= f.label :city %>
   <%= f.association :city, collection: City.all.order(:name)  %>
-  <%= f.label :price_per_night %>
   <%= f.input :price_per_night, as: :integer  %>
-  <%= f.label :address %>
   <%= f.text_field :address  %>
   <%= f.label :no_of_guests %>
   <%= f.input :no_of_guests, as: :integer, collection: 1..15 %>
-  <%= f.label :no_of_bedrooms %>
   <%= f.input :no_of_bedrooms, as: :integer, collection: 1..15  %>
-  <%= f.label :no_of_bathrooms %>
   <%= f.input :no_of_bathrooms, as: :integer, collection: 1..10  %>
-  <%= f.label :amenities %>
   <%= f.association :amenities, as: :check_boxes  %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
 
 
   <%= f.submit%>
