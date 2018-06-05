@@ -227,8 +227,10 @@ DEPENDENCIES
   autoprefixer-rails
   bootsnap
   bootstrap-sass (~> 3.3)
+  bundler
   carrierwave (~> 1.2)
   cloudinary
+
   devise
   figaro
   font-awesome-sass (~> 5.0.9)

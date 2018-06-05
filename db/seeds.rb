@@ -80,6 +80,32 @@ b.save
 c.save
 puts 'Finished!'
 
+puts 'Creating bookings...'
+book1 = Booking.create!(price: 100,
+                        accepted: true,
+                        start_date: DateTime.now.to_date,
+                        no_of_nights: 4,
+                        completed: false,
+                        no_confirmed_guests: 5,
+                        castle: ca1,
+                        user: u1)
+book2 = Booking.create!(price: 250,
+                        accepted: false,
+                        start_date: DateTime.yesterday.to_date,
+                        no_of_nights: 3,
+                        completed: true,
+                        no_confirmed_guests: 3,
+                        castle: ca2,
+                        user: u1)
+book3 = Booking.create!(price: 400,
+                        accepted: true,
+                        start_date: DateTime.tomorrow.to_date,
+                        no_of_nights: 1,
+                        completed: false,
+                        no_confirmed_guests: 2,
+                        castle: ca2,
+                        user: u2)
+puts 'Done!'
 
 
 
