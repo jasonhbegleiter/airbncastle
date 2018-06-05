@@ -32,6 +32,7 @@ ca1 = Castle.new(
   no_of_bathrooms: 50)
 ca1.city = edinburgh
 ca1.user = u1
+ca1.remote_photo_url = 'https://cdn.shopify.com/s/files/1/1094/1378/products/IMG_1409_1024x1024.jpg?v=1527182154'
 ca1.save
 ca2 = Castle.new(
   name: 'Hogwarts',
@@ -43,6 +44,7 @@ ca2 = Castle.new(
   no_of_bathrooms: 50)
 ca2.city = aber
 ca2.user = u1
+ca2.remote_photo_url = 'https://vignette.wikia.nocookie.net/harrypotter/images/b/bd/Dhogwarts.jpg/revision/latest/scale-to-width-down/350?cb=20120128145344'
 ca2.save
 ca3 = Castle.new(
   name: 'Windsor Castle',
@@ -54,6 +56,7 @@ ca3 = Castle.new(
   no_of_bathrooms: 20)
 ca3.city = windsor
 ca3.user = u2
+ca3.remote_photo_url = 'https://www.royalcollection.org.uk/sites/default/files/styles/rctr-scale-crop-350-350/public/vimeo-square_1.jpg?itok=EsZcHADU'
 ca3.save
 puts 'Finished!'
 

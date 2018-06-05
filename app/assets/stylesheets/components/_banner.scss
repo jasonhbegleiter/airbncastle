@@ -5,6 +5,7 @@
   color: #eee;
   text-align: center;
   padding-top: 40vh;
+  position: relative;
 }
 
 .container img {
@@ -31,6 +32,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 .banner h1 {
   font-size: 50px;
@@ -48,4 +50,27 @@
 #sweet-alert-demo {
   text-decoration: none;
   color:white;
+}
+
+.banner-button-wrapper {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  // display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#edit_castle, #delete_castle {
+  background: #ffffff !important;
+  color: #484848 !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  display: inline-block !important;
+  padding-right: 16px !important;
+  padding-left: 16px !important;
+  font-size: 14px !important;
+  line-height: 18px !important;
+  width: auto !important;
+  border-radius: 4px !important;
 }
