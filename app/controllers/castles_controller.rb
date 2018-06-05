@@ -12,9 +12,13 @@ class CastlesController < ApplicationController
   end
 
   def create
+
     castle = Castle.new(castle_params)
     castle.user = current_user
     castle.save!
+    params[:castle][:amenity_ids].each do |a|
+      CastleAmenity.create!(castle: castle, amenity: Amenity.find(a.to_i)) if a.length > 0
+    end
     redirect_to castle_path(castle)
   end
 
@@ -37,7 +41,7 @@ class CastlesController < ApplicationController
   end
 
   def castle_params
-    params.require(:castle).permit(:name, :summary, :price_per_night, :address, :no_of_guests, :no_of_bedrooms, :no_of_bathrooms, :city_id)
+    params.require(:castle).permit(:name, :summary, :price_per_night, :address, :no_of_guests, :no_of_bedrooms, :no_of_bathrooms, :city_id, :photo)
     # raise
   end
 end
