@@ -1,2 +1,22 @@
-<h1>Castles#edit</h1>
-<p>Find me in app/views/castles/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-7 form-content">
+
+      <div class="content">
+        <div class="form-header">
+          <h3>Hey! Let's update those castle-y details.</h3>
+        </div>
+        <p class="light-caps">STEP 1</p>
+        <%= render 'castle_form' %>
+
+      </div>
+
+    </div>
+    <div class="col-md-5">
+      <div class="picture-container">
+        <%= image_tag "castle_image.png", height: 50 %>
+
+      </div>
+    </div>
+  </div>
+</div>
