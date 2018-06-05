@@ -14,5 +14,10 @@
   Name: <%= @castle.name %> <br>
   Summary: <%= @castle.summary %> <br>
   Price per night: <%= @castle.price_per_night %> <br>
-  <% @castle.amenities %>
+  <ul>
+
+  <% @castle.amenities.each do |a| %>
+    <li><%=  a.name %></li>
+  <% end %>
+  </ul>
 </div>

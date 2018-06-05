@@ -23,7 +23,6 @@ class CastlesController < ApplicationController
   end
 
   def edit
-    redirect_to edit_castle_path(@castle)
   end
 
   def update
