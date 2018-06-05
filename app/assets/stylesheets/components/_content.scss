@@ -1,3 +1,21 @@
 .content {
   margin-top: 90px;
 }
+
+.picture-container img {
+  height: 500px;
+  width: auto;
+}
+
+.generic-link {
+  cursor: pointer;
+  padding: none;
+  color: #616668;
+  font-size: 14px;
+}
+
+.generic-link:hover {
+  color: #da552f;
+  text-decoration: none;
+}
+
