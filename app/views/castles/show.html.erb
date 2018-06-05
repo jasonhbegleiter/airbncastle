@@ -1,4 +1,18 @@
 <div class="content">
   <h1>Castles#show</h1>
-  <p>Find me in app/views/castles/show.html.erb</p>
+</div>
+
+<div>
+<%= link_to "Delete Castle", castle_path, method: :delete,
+  data: { confirm: "Are you sure?" } %>
+</div>
+<div>
+  <%= link_to "Edit Castle", edit_castle_path(@castle) %>
+</div>
+
+<div class="container">
+  Name: <%= @castle.name %> <br>
+  Summary: <%= @castle.summary %> <br>
+  Price per night: <%= @castle.price_per_night %> <br>
+  <% @castle.amenities %>
 </div>

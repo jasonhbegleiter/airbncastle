@@ -1,7 +1,7 @@
 class Castle < ApplicationRecord
   belongs_to :city
   belongs_to :user
-  has_many :castle_amenities
+  has_many :castle_amenities, dependent: :destroy
   has_many :amenities, through: :castle_amenities
   mount_uploader :photo, PhotoUploader
 
