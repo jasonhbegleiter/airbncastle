@@ -1,19 +1,42 @@
 <div class="castle-form">
-<%= simple_form_for(@castle) do |f| %>
+  <%= simple_form_for(@castle) do |f| %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name  %>
-  <%= f.label :summary %>
-  <%= f.text_field :summary  %>
-  <%= f.association :city, collection: City.all.order(:name)  %>
-  <%= f.input :price_per_night, as: :integer  %>
-  <%= f.label :address %>
-  <%= f.text_field :address  %>
-  <%= f.input :no_of_guests, as: :integer, collection: 1..15 %>
-  <%= f.input :no_of_bedrooms, as: :integer, collection: 1..15  %>
-  <%= f.input :no_of_bathrooms, as: :integer, collection: 1..10  %>
-  <%= f.association :amenities, as: :check_boxes  %>
+  <div class="form-group">
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :address, class: 'form-control', placeholder: 'Address' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.association :city, collection: City.all.order(:name), prompt: "Choose a city", label: false %>
+  </div>
+
+  <p class="light-caps">STEP 2</p>
+  <div class="form-group">
+    <%= f.input_field :price_per_night, class: 'form-control', as: :integer, placeholder: 'Price per night'  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input_field :no_of_guests, class: 'form-control', as: :integer, collection: 1..15, placeholder: 'Number of guests' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input_field :no_of_bedrooms, class: 'form-control', as: :integer, collection: 1..15, placeholder: 'Number of bedrooms' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input_field :no_of_bathrooms, class: 'form-control', as: :integer, collection: 1..10, placeholder: 'Number of bathrooms' %>
+  </div>
+
+  <p class="light-caps">STEP 3</p>
+
+  <div class="form-group">
+    <%= f.association :amenities, as: :check_boxes, collection_label: "" %>
+
+  </div>
 
 
   <%= f.submit%>
-<% end %></div>
+  <% end %></div>
