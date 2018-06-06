@@ -13,9 +13,13 @@ class CastlesController < ApplicationController
 
   def create
     castle = Castle.new(castle_params)
-    # castle_location = castle_locatio
     castle.user = current_user
     castle.save!
+    if castle.latitude.nil?
+      castle.latitude = 64.7511
+      castle.longitude = 147.3494
+      castle.update!
+    end
     params[:castle][:amenity_ids].each do |a|
       CastleAmenity.create!(castle: castle, amenity: Amenity.find(a.to_i)) if a.length > 0
     end
