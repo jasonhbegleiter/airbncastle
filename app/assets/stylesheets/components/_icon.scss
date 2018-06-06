@@ -1,0 +1,38 @@
+.icons img {
+  margin-top: 0;
+
+}
+
+.icon-header {
+  text-align: center;
+  font-family: Raleway;
+  color: #a2a2a2;
+      margin-top: 50px;
+}
+
+.icon-card {
+  font-family: Raleway;
+  padding: 0px;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+.icon-card h2 {
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.icon-card p {
+  font-size: 15px
+}
+
+.icon-card img {
+  width: 70px;
+  align-self: center;
+}
+
