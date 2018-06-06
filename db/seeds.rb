@@ -118,26 +118,36 @@ ca6.save
 puts 'Finished!'
 
 puts 'Creating those key amenities...'
-wifi = Amenity.create!(name: 'Wifi')
-pool = Amenity.create!(name: 'Swimming pool')
-quid = Amenity.create!(name: 'Quidditch pitch')
-kilts = Amenity.create!(name: 'Kilts')
+wifi = Amenity.create!(name: 'Wifi', photo: 'wifi.png')
+pool = Amenity.create!(name: 'Swimming pool', photo: 'pool.png')
+quidditch = Amenity.create!(name: 'Quidditch pitch', photo: 'quidditch.png')
+carpet = Amenity.create!(name: 'Magic carpets', photo: 'carpet.png')
+knight = Amenity.create!(name: 'Personal Guard', photo: 'knight.png')
+wand = Amenity.create!(name: 'Magic', photo: 'magic_wand.png')
+servent = Amenity.create!(name: 'Enchanted House Servents', photo: 'servent.png')
+washer = Amenity.create!(name: 'Washer/Dryer', photo: 'washer.png')
+
 puts 'Finished!'
 
 
 puts 'Creating castle_amenities links...'
-a = CastleAmenity.new
-b = CastleAmenity.new
-c = CastleAmenity.new
-a.castle = ca1
-a.amenity = wifi
-b.castle = ca1
-b.amenity = kilts
-c.castle = ca2
-c.amenity = quid
-a.save
-b.save
-c.save
+CastleAmenity.create!(castle: ca1, amenity: quidditch)
+CastleAmenity.create!(castle: ca1, amenity: wand)
+CastleAmenity.create!(castle: ca1, amenity: pool)
+CastleAmenity.create!(castle: ca2, amenity: servent)
+CastleAmenity.create!(castle: ca2, amenity: carpet)
+CastleAmenity.create!(castle: ca2, amenity: wand)
+CastleAmenity.create!(castle: ca3, amenity: wand)
+CastleAmenity.create!(castle: ca3, amenity: knight)
+CastleAmenity.create!(castle: ca4, amenity: knight)
+CastleAmenity.create!(castle: ca4, amenity: pool)
+CastleAmenity.create!(castle: ca4, amenity: wifi)
+CastleAmenity.create!(castle: ca4, amenity: washer)
+CastleAmenity.create!(castle: ca5, amenity: knight)
+CastleAmenity.create!(castle: ca5, amenity: pool)
+CastleAmenity.create!(castle: ca5, amenity: wifi)
+CastleAmenity.create!(castle: ca6, amenity: washer)
+CastleAmenity.create!(castle: ca6, amenity: knight)
 puts 'Finished!'
 
 puts 'Creating bookings...'
