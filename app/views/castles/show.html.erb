@@ -30,9 +30,8 @@
     Summary: <%= @castle.summary %> <br>
     Price per night: <%= @castle.price_per_night %> <br>
     <ul>
-
       <% @castle.amenities.each do |a| %>
-      <li><%=  a.name %></li>
+      <li><%= image_tag(a.photo); %><%=  a.name %></li>
       <% end %>
     </ul>
 
