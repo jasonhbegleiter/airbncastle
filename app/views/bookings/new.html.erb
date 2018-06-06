@@ -8,14 +8,22 @@
         </div>
         <p class="light-caps">STEP 1</p>
         <%= render 'booking_form' %>
-
+        <hr />
+        <%= link_to "Back to castle", castle_path(@castle), class: "btn btn-default" %>
       </div>
 
     </div>
     <div class="col-md-5">
-      <div class="picture-container">
-        <%= image_tag "castle_drawing.png", height: 50 %>
 
+
+      <div class="picture-container new-booking-container">
+        <div class="card-booking" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), url('<%= cl_image_path @castle.photo, height: 400, crop: :fill %>');">
+          <div class="card-category"><h5>ENTIRE CHATEAU</h5></div>
+          <div class="card-description">
+            <h3><%= @castle.name %></h3>
+            <p><%= @castle.summary %></p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
