@@ -12,8 +12,8 @@ class CastlesController < ApplicationController
   end
 
   def create
-
     castle = Castle.new(castle_params)
+    # castle_location = castle_locatio
     castle.user = current_user
     castle.save!
     params[:castle][:amenity_ids].each do |a|
