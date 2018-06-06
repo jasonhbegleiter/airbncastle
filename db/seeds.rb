@@ -124,7 +124,7 @@ quidditch = Amenity.create!(name: 'Quidditch pitch', photo: 'quidditch.png')
 carpet = Amenity.create!(name: 'Magic carpets', photo: 'carpet.png')
 knight = Amenity.create!(name: 'Personal Guard', photo: 'knight.png')
 wand = Amenity.create!(name: 'Magic', photo: 'magic_wand.png')
-servent = Amenity.create!(name: 'Enchanted House Servents', photo: 'servent.png')
+servant = Amenity.create!(name: 'Enchanted House Servants', photo: 'servant.png')
 washer = Amenity.create!(name: 'Washer/Dryer', photo: 'washer.png')
 
 puts 'Finished!'
@@ -134,7 +134,7 @@ puts 'Creating castle_amenities links...'
 CastleAmenity.create!(castle: ca1, amenity: quidditch)
 CastleAmenity.create!(castle: ca1, amenity: wand)
 CastleAmenity.create!(castle: ca1, amenity: pool)
-CastleAmenity.create!(castle: ca2, amenity: servent)
+CastleAmenity.create!(castle: ca2, amenity: servant)
 CastleAmenity.create!(castle: ca2, amenity: carpet)
 CastleAmenity.create!(castle: ca2, amenity: wand)
 CastleAmenity.create!(castle: ca3, amenity: wand)
