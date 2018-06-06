@@ -2,6 +2,9 @@ puts 'Creating your marvellous countries...'
 scot = Country.create!(name: 'Scotland')
 wal = Country.create!(name: 'Wales')
 eng = Country.create!(name: 'England')
+won = Country.create!(name: 'Wonderland')
+thr = Country.create!(name: 'Land of the Thrones')
+fra = Country.create!(name: 'France')
 puts 'Finished!'
 
 puts 'Creating your marvellous cities...'
@@ -14,50 +17,98 @@ windsor.save
 aber = City.new(name: 'Abergavenny')
 aber.country = wal
 aber.save
+nev = City.new(name: 'NeverNeverLand')
+nev.country = wal
+nev.save
+hog = City.new(name: 'Hogwarts')
+hog.country = won
+hog.save
+nor = City.new(name: 'The North')
+nor.country = thr
+nor.save
+norm = City.new(name: 'Normandy')
+norm.country = fra
+norm.save
 puts 'Finished!'
 
 puts 'Creating your marvellous users...'
-u1 = User.create!(email: '123@743s', password: '1231f23')
-u2 = User.create!(email: '456s@1323', password: '456f456')
+u1 = User.create!(email: '1@1.com', password: '123456')
+u2 = User.create!(email: '2@2.com', password: '234567')
 puts 'Finished!'
 
 puts 'Creating your MAGNIFICENT castles...'
 ca1 = Castle.new(
-  name: 'Edinburgh Castle',
-  summary: 'Och Aye',
-  price_per_night: 1000,
-  address: 'On top of the hill',
-  no_of_guests: 500,
-  no_of_bedrooms: 50,
-  no_of_bathrooms: 50)
-ca1.city = edinburgh
-ca1.user = u1
-ca1.remote_photo_url = 'https://cdn.shopify.com/s/files/1/1094/1378/products/IMG_1409_1024x1024.jpg?v=1527182154'
-ca1.save
-ca2 = Castle.new(
   name: 'Hogwarts',
-  summary: 'Expelliarmus',
-  price_per_night: 2,
-  address: 'Platform 9 & 3/4',
+  summary: 'School of Witchcraft and Wizadry',
+  price_per_night: 20,
+  address: 'Near Hogsmeade and the Forbidden Forest',
   no_of_guests: 1000,
   no_of_bedrooms: 500,
   no_of_bathrooms: 50)
-ca2.city = aber
+ca1.city = hog
+ca1.user = u1
+ca1.remote_photo_url = 'http://cdn.playbuzz.com/cdn/7aa950b4-eaa0-417d-93af-3bd332dc8086/5e549d0d-aad1-4ec1-96c9-31e36f08af8c.jpg'
+ca1.save
+ca2 = Castle.new(
+  name: 'Disney Castle',
+  summary: 'The Most Magical Place On Earth',
+  price_per_night: 1000,
+  address: 'Disneyland, where dreams come true',
+  no_of_guests: 500,
+  no_of_bedrooms: 50,
+  no_of_bathrooms: 50)
+ca2.city = nev
 ca2.user = u1
-ca2.remote_photo_url = 'https://vignette.wikia.nocookie.net/harrypotter/images/b/bd/Dhogwarts.jpg/revision/latest/scale-to-width-down/350?cb=20120128145344'
+ca2.remote_photo_url = 'https://i.ytimg.com/vi/Z8IHW0EfhAg/maxresdefault.jpg'
 ca2.save
 ca3 = Castle.new(
+  name: 'Winterfell',
+  summary: 'Seat of the ruler of the North',
+  price_per_night: 1000,
+  address: 'Center of the North',
+  no_of_guests: 50,
+  no_of_bedrooms: 15,
+  no_of_bathrooms: 3)
+ca3.city = nor
+ca3.user = u1
+ca3.remote_photo_url = 'https://i.redd.it/o43a6l05iohz.png'
+ca3.save
+ca4 = Castle.new(
   name: 'Windsor Castle',
-  summary: 'Afternoon tea every day',
+  summary: 'Royal residence in the English county of Berkshire',
   price_per_night: 10000,
   address: 'The poshest part of England',
   no_of_guests: 50,
   no_of_bedrooms: 20,
   no_of_bathrooms: 20)
-ca3.city = windsor
-ca3.user = u2
-ca3.remote_photo_url = 'https://www.royalcollection.org.uk/sites/default/files/styles/rctr-scale-crop-350-350/public/vimeo-square_1.jpg?itok=EsZcHADU'
-ca3.save
+ca4.city = windsor
+ca4.user = u2
+ca4.remote_photo_url = 'https://45fy4cvjvn53mx1xl43gozy1-wpengine.netdna-ssl.com/wp-content/uploads/Directions-1-985x575.jpg'
+ca4.save
+ca5 = Castle.new(
+  name: 'Edinburgh Castle',
+  summary: 'Historic fortress overlooking the city',
+  price_per_night: 1000,
+  address: 'Castlehill',
+  no_of_guests: 500,
+  no_of_bedrooms: 50,
+  no_of_bathrooms: 50)
+ca5.city = edinburgh
+ca5.user = u1
+ca5.remote_photo_url = 'https://cdn.shopify.com/s/files/1/1094/1378/products/IMG_1409_1024x1024.jpg?v=1527182154'
+ca5.save
+ca6 = Castle.new(
+  name: 'Le Mont Saint Michel',
+  summary: 'UNESCO World Heritage Site',
+  price_per_night: 1000,
+  address: 'Set in the mesmerising bay where Normandy and Brittany merge',
+  no_of_guests: 500,
+  no_of_bedrooms: 50,
+  no_of_bathrooms: 50)
+ca6.city = norm
+ca6.user = u1
+ca6.remote_photo_url = 'http://fhmedien.de/wp-content/uploads/2012/10/MG_8440_k_2012.jpg'
+ca6.save
 puts 'Finished!'
 
 puts 'Creating those key amenities...'
