@@ -47,6 +47,7 @@ ca1 = Castle.new(
   no_of_bathrooms: 50)
 ca1.city = hog
 ca1.user = u1
+ca1.review = "My stay at Hogwarts was even more magical than I could ever have imagined. I recommend a day trip to Hogsmeade too - the butterbeer is delicious!"
 ca1.remote_photo_url = 'http://cdn.playbuzz.com/cdn/7aa950b4-eaa0-417d-93af-3bd332dc8086/5e549d0d-aad1-4ec1-96c9-31e36f08af8c.jpg'
 ca1.save
 ca2 = Castle.new(
@@ -59,6 +60,7 @@ ca2 = Castle.new(
   no_of_bathrooms: 50)
 ca2.city = nev
 ca2.user = u1
+ca2.review = "The Disney Castle really is a place where dreams come true. I felt like I had been transported to another world. Wish I could have stayed for even longer!"
 ca2.remote_photo_url = 'https://i.ytimg.com/vi/Z8IHW0EfhAg/maxresdefault.jpg'
 ca2.save
 ca3 = Castle.new(
@@ -71,6 +73,7 @@ ca3 = Castle.new(
   no_of_bathrooms: 3)
 ca3.city = nor
 ca3.user = u1
+ca3.review = "My stay at Winterfell was fabulous. Expect cold nights and long winters, but if that's your cup of tea, you'll have a ball! Take furs."
 ca3.remote_photo_url = 'https://i.redd.it/o43a6l05iohz.png'
 ca3.save
 ca4 = Castle.new(
@@ -83,6 +86,7 @@ ca4 = Castle.new(
   no_of_bathrooms: 20)
 ca4.city = windsor
 ca4.user = u2
+ca4.review = "I had the absolute honour of meeting queenie herself. She's such a darling. Thanks AirbnCastle for making me feel like a true royal for my stay. Spiffingly splendid!"
 ca4.remote_photo_url = 'https://45fy4cvjvn53mx1xl43gozy1-wpengine.netdna-ssl.com/wp-content/uploads/Directions-1-985x575.jpg'
 ca4.save
 ca5 = Castle.new(
@@ -95,6 +99,7 @@ ca5 = Castle.new(
   no_of_bathrooms: 50)
 ca5.city = edinburgh
 ca5.user = u1
+ca5.review = "Edinburgh Castle - wow. What a view over the city, I felt like a real king up there on the hill! Loved the tartan theme too, nice touch. Take earplugs though - those bagpipes get tiring after a while."
 ca5.remote_photo_url = 'https://cdn.shopify.com/s/files/1/1094/1378/products/IMG_1409_1024x1024.jpg?v=1527182154'
 ca5.save
 ca6 = Castle.new(
@@ -107,6 +112,7 @@ ca6 = Castle.new(
   no_of_bathrooms: 50)
 ca6.city = norm
 ca6.user = u1
+ca6.review = "Merci AirbnCastle pour un sejour si fantastique. Je vais certainement y retourner l'année prochaine!"
 ca6.remote_photo_url = 'http://fhmedien.de/wp-content/uploads/2012/10/MG_8440_k_2012.jpg'
 ca6.save
 puts 'Finished!'
