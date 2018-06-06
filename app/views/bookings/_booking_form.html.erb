@@ -1,6 +1,7 @@
 <div class="castle-form">
   <%= simple_form_for [@castle, @booking] do |f| %>
 
+  <p class="light-form-label">Start Date</p>
   <div class="form-group">
     <%= f.input_field :start_date, class: 'form-control', as: :date, start_year: Date.today.year, placeholder: 'Start Date'  %>
   </div>

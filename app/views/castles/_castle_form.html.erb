@@ -1,42 +1,49 @@
 <div class="castle-form">
   <%= simple_form_for(@castle) do |f| %>
 
-
+  <p class="light-form-label">Name</p>
   <div class="form-group">
-    <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Hogwarts' %>
   </div>
 
+  <p class="light-form-label">Summary</p>
   <div class="form-group">
-    <%= f.text_field :summary, class: 'form-control', placeholder: 'Summary' %>
+    <%= f.text_field :summary, class: 'form-control', placeholder: 'School of Witchcraft and Wizadry' %>
   </div>
 
+  <p class="light-form-label">Address</p>
   <div class="form-group">
-    <%= f.text_field :address, class: 'form-control', placeholder: 'Address' %>
+    <%= f.text_field :address, class: 'form-control', placeholder: 'Near Hogsmeade, Harry Potter World' %>
   </div>
 
+  <p class="light-form-label">City</p>
   <div class="form-group">
     <%= f.association :city, collection: City.all.order(:name), prompt: "Choose a city", label: false %>
   </div>
 
   <p class="light-caps">STEP 2</p>
+  <p class="light-form-label">Price per night ($)</p>
   <div class="form-group">
-    <%= f.input_field :price_per_night, class: 'form-control', as: :integer, placeholder: 'Price per night'  %>
+    <%= f.input_field :price_per_night, class: 'form-control', as: :integer, placeholder: "100"  %>
   </div>
 
+  <p class="light-form-label">Number of guests</p>
   <div class="form-group">
-    <%= f.input_field :no_of_guests, class: 'form-control', as: :integer, collection: 1..15, placeholder: 'Number of guests' %>
+    <%= f.input_field :no_of_guests, class: 'form-control', as: :integer, collection: 1..15, placeholder: '6' %>
   </div>
 
+  <p class="light-form-label">Number of bedrooms</p>
   <div class="form-group">
-    <%= f.input_field :no_of_bedrooms, class: 'form-control', as: :integer, collection: 1..15, placeholder: 'Number of bedrooms' %>
+    <%= f.input_field :no_of_bedrooms, class: 'form-control', as: :integer, collection: 1..15, placeholder: '3' %>
   </div>
 
+  <p class="light-form-label">Number of bathrooms</p>
   <div class="form-group">
-    <%= f.input_field :no_of_bathrooms, class: 'form-control', as: :integer, collection: 1..10, placeholder: 'Number of bathrooms' %>
+    <%= f.input_field :no_of_bathrooms, class: 'form-control', as: :integer, collection: 1..10, placeholder: '2' %>
   </div>
 
-  <p class="light-caps">STEP 3</p>
-
+  <p class="light-caps-3">STEP 3</p>
+  <p class="light-form-label">Amenities (please select those that apply)</p>
   <div class="form-group">
     <%= f.association :amenities, as: :check_boxes, collection_label: "" %>
 
