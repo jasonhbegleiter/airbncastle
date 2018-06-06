@@ -52,6 +52,7 @@
   text-align: center;
   height: 40vh;
   margin-top: 100px;
+  background-position: center center;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
@@ -86,16 +87,4 @@
   justify-content: space-between;
 }
 
-.show_button {
-  background: #ffffff !important;
-  color: #484848 !important;
-  font-weight: 600 !important;
-  text-align: center !important;
-  display: inline-block !important;
-  padding-right: 16px !important;
-  padding-left: 16px !important;
-  font-size: 14px !important;
-  line-height: 18px !important;
-  width: auto !important;
-  border-radius: 4px !important;
-}
+
