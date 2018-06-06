@@ -1,26 +1,28 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%), url('https://hdwallpaperim.com/wp-content/uploads/2017/08/25/455225-women-women_outdoors-landscape-robes-red_flowers-natural_light-lights-castle.jpg');">
+<!-- <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%), url('https://hdwallpaperim.com/wp-content/uploads/2017/08/25/455225-women-women_outdoors-landscape-robes-red_flowers-natural_light-lights-castle.jpg');">
   <div class="banner-content">
     <h1>Find your perfect escape</h1>
     <p>with Airbncastle</p>
   </div>
-</div>
+</div> -->
+
 <div class="container">
-
-
-    <h1 class="text-left cards-header">Castles all around the world</h1>
+  <div class="content">
+    <h1 class="text-left cards-header">Castles around the world</h1>
     <div class="row">
       <% @castles.each do |castle| %>
+      <%= link_to castle_path(castle), :action => 'go' do %>
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), url('https://ae01.alicdn.com/kf/HTB1DltIeQfb_uJjSsD4q6yqiFXaU/castle-in-poland-city-building-landscape-wallpaper-KD723-living-Room-home-wall-modern-art-decor-wood.jpg');">
+        <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), url('<%= cl_image_path castle.photo, height: 400, crop: :fill %>');">
           <div class="card-category"><h5>ENTIRE CHATEAU</h5></div>
           <div class="card-description">
             <h3><%= castle.name %></h3>
-            <p><%= castle.address %></p>
+            <p><%= castle.summary %></p>
           </div>
         </div>
+        <% end %>
         <div class="card-footer">
           <div class="footer-links">
-            <span><%= castle.summary %></span>
+            <span><%= castle.address %></span>
             <br>
             <span><%= "$#{castle.price_per_night} per night   |" %></span>
             <span><%= "   Free cancellation"%></span>
@@ -31,3 +33,4 @@
       <% end %>
     </div>
   </div>
+</div>
