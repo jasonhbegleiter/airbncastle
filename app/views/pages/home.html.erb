@@ -60,7 +60,7 @@
             <p><%= Castle.find(3).summary %></p>
           </div>
         </div>
-        <% end %>
+m skh        <% end %>
       </div>
       <div class="col-xs-12 col-sm-4">
         <%= link_to castle_path(Castle.find(1)), :action => 'go' do %>
@@ -88,4 +88,44 @@
     <button type="submit" class="btn btn-primary mb-2">Subscribe</button>
   </form>
 </div>
+
+
+<div class="row contact-page">
+  <div class="col-md-10">
+    <div id="map" style="width: 100%; height: 400px;"></div>
+
+  </div>
+  <div class="col-md-2">
+   <div class="newsletter text-left">
+  <h2>Come say hi!</h2>
+  <h5>You can find us at:</h5>
+  <p>Le Wagon TLV</p>
+  <p>32 Ben Yehuda</p>
+</div>
+
+
+  </div>
+
+</div>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <script type="text/javascript">
+      var myLatlng = new google.maps.LatLng(32.076505, 34.768219);
+
+      var myOptions = {
+        zoom: 16,
+        center: myLatlng,
+        scrollwheel: false,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+  styles: [] // TODO: replace [] with an array from https://snazzymaps.com/
+};
+
+var map = new google.maps.Map(document.getElementById('map'), myOptions);
+var marker = new google.maps.Marker({
+  position: myLatlng,
+  map: map,
+  title: "You are here!"
+});
+</script>
 
