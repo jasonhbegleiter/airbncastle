@@ -41,7 +41,7 @@ ca1 = Castle.new(
   name: 'Hogwarts',
   summary: 'School of Witchcraft and Wizadry',
   price_per_night: 20,
-  address: 'Near Hogsmeade and the Forbidden Forest',
+  address: 'Sawley, Clitheroe BB7 4NH, UK',
   no_of_guests: 1000,
   no_of_bedrooms: 500,
   no_of_bathrooms: 50)
@@ -54,7 +54,7 @@ ca2 = Castle.new(
   name: 'Disney Castle',
   summary: 'The Most Magical Place On Earth',
   price_per_night: 1000,
-  address: 'Disneyland, where dreams come true',
+  address: '1313 Disneyland Dr, Anaheim, CA 92802, USA',
   no_of_guests: 500,
   no_of_bedrooms: 50,
   no_of_bathrooms: 50)
@@ -67,7 +67,7 @@ ca3 = Castle.new(
   name: 'Winterfell',
   summary: 'Seat of the ruler of the North',
   price_per_night: 1000,
-  address: 'Center of the North',
+  address: 'Koskelantie 128, 41710 Rutalahti, Finland',
   no_of_guests: 50,
   no_of_bedrooms: 15,
   no_of_bathrooms: 3)
@@ -80,7 +80,7 @@ ca4 = Castle.new(
   name: 'Windsor Castle',
   summary: 'Royal residence in the English county of Berkshire',
   price_per_night: 10000,
-  address: 'The poshest part of England',
+  address: 'Windsor SL4 1NJ, UK',
   no_of_guests: 50,
   no_of_bedrooms: 20,
   no_of_bathrooms: 20)
@@ -93,7 +93,7 @@ ca5 = Castle.new(
   name: 'Edinburgh Castle',
   summary: 'Historic fortress overlooking the city',
   price_per_night: 1000,
-  address: 'Castlehill',
+  address: 'Castlehill, Edinburgh EH1 2NG, UK',
   no_of_guests: 500,
   no_of_bedrooms: 50,
   no_of_bathrooms: 50)
@@ -106,7 +106,7 @@ ca6 = Castle.new(
   name: 'Le Mont Saint Michel',
   summary: 'UNESCO World Heritage Site',
   price_per_night: 1000,
-  address: 'Set in the mesmerising bay where Normandy and Brittany merge',
+  address: '50170 Mont Saint-Michel, France',
   no_of_guests: 500,
   no_of_bedrooms: 50,
   no_of_bathrooms: 50)

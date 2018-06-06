@@ -4,6 +4,7 @@ class Castle < ApplicationRecord
   has_many :castle_amenities, dependent: :destroy
   has_many :amenities, through: :castle_amenities
   mount_uploader :photo, PhotoUploader
+  geocoded_by :address
 
   validates :name, uniqueness: true, presence: true
   validates :summary, presence: true
@@ -12,5 +13,7 @@ class Castle < ApplicationRecord
   validates :no_of_guests, presence: true
   validates :no_of_bedrooms, presence: true
   validates :no_of_bathrooms, presence: true
+  validates :address, presence: true
 
+  after_validation :geocode, if: :will_save_change_to_address?
 end
