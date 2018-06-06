@@ -1,4 +1,14 @@
 // Specific CSS for your home-page
+
+.home-banner h1{
+  background-color: #d4b0b0;
+  opacity: 0.9;
+  height: 70px;
+  padding-top: 10px;
+  width: 300px;
+  margin-left: calc(50vw - 150px);
+  border-radius: 4px;
+}
 .wrapper-white h2 {
   color: black;
   font-weight: bold;
@@ -15,6 +25,3 @@
   padding: 100px 0;
 }
 
-.contact-page {
-
-}
