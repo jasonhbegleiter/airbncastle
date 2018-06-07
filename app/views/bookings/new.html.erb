@@ -1,4 +1,9 @@
-  <% if @unavailable %>
+  <% if @error %>
+    <div class="alert alert-warning">
+      <p>Please complete all fields to proceed</p>
+    </div>
+  <% end %>
+    <% if @unavailable %>
     <div class="alert alert-warning">
       <p>Castle unavailable on your chosen dates. Please try again.</p>
     </div>

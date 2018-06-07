@@ -1,5 +1,7 @@
 <div class="castle-form">
   <%= simple_form_for(@castle) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error :base %>
 
   <p class="light-form-label">Name</p>
   <div class="form-group">
