@@ -1,3 +1,62 @@
-.content_grid {
+.main_container {
+  display: flex;
+}
+
+#map {
+  flex: 0 0 450px;
+  height: 100vh;
+  position: sticky !important; /* !important to override Gmaps inline CSS */
+  top: 0 !important;
+  width: 30vw !important;
+}
+
+.details_grid {
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 65% 35%;
+}
+
+.details_list {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 3;
+}
+
+.amenities_grid {
+  display: flex;
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 2;
+}
+
+.reviews_grid {
+  grid-row: 2 / span 1;
+  grid-column: 3 / span 1;
+}
+
+.show_button {
+  background: #ffffff !important;
+  color: #484848 !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  display: inline-block !important;
+  padding-right: 16px !important;
+  padding-left: 16px !important;
+  font-size: 14px !important;
+  line-height: 18px !important;
+  width: auto !important;
+  border-radius: 4px !important;
+}
+
+.show_banner {
+  color: white;
+  text-align: center;
+  height: 40vh;
+  margin-top: 100px;
+  background-position: center center;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 0;
 }
