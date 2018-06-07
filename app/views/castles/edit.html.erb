@@ -5,6 +5,7 @@
       <div class="content">
         <div class="form-header">
           <h3>Hey! Let's update those castle-y details.</h3>
+          <%= link_to "Back to castle", castle_path(@castle), class: "btn show_button" %>
         </div>
         <p class="light-caps">STEP 1</p>
         <%= render 'castle_form' %>

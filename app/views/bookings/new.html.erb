@@ -15,11 +15,11 @@
       <div class="content">
         <div class="form-header">
           <h3><%= "Let's get you booked into #{@castle.name.capitalize}" %></h3>
+        <%= link_to "Back to castle", castle_path(@castle), class: "btn show_button" %>
         </div>
         <p class="light-caps">STEP 1</p>
         <%= render 'booking_form' %>
         <hr />
-        <%= link_to "Back to castle", castle_path(@castle), class: "btn btn-default" %>
       </div>
 
     </div>
