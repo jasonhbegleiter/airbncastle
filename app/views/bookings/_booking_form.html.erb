@@ -19,6 +19,6 @@
     <%= f.input_field :no_confirmed_guests, class: 'form-control', as: :integer, collection: 1..15, placeholder: '25' %>
   </div>
 
-  <%= f.submit%>
+  <%= f.submit 'Create booking', :class => 'btn show_button'%>
   <% end %>
 </div>
