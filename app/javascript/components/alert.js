@@ -1,11 +1,11 @@
-import swal from 'sweetalert';
+// import swal from 'sweetalert';
 
-function bindSweetAlertButtonDemo() {
-  const swalButton = document.getElementById('sweet-alert-demo');
-    swalButton.addEventListener('click', () => {
+// function bindSweetAlertButtonDemo() {
+//   const swalButton = document.getElementById('sweet-alert-demo');
+//     swalButton.addEventListener('click', () => {
 
-      console.log('hello');
-    });
-}
+//       console.log('hello');
+//     });
+// }
 
-export { bindSweetAlertButtonDemo };
+// export { bindSweetAlertButtonDemo };

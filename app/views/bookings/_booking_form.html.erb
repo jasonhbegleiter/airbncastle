@@ -1,5 +1,7 @@
 <div class="castle-form">
   <%= simple_form_for [@castle, @booking] do |f| %>
+    <%= f.error_notification %>
+    <%= f.error :base %>
 
   <p class="light-form-label">Start Date</p>
   <div class="form-group">
@@ -17,14 +19,6 @@
   <div class="form-group">
     <%= f.input_field :no_confirmed_guests, class: 'form-control', as: :integer, collection: 1..15, placeholder: '25' %>
   </div>
-  <% if params[:no_of_nights] == nil %>
-  <% else %>
-    <% if @unavailable %>
-    <div id="sweet-alert-no" class="btn btn-primary">Check availability</div>
-    <% else %>
-     <div id="sweet-alert-yes" class="btn btn-primary">Check availability</div>
-     <% end %>
-   <% end %>
 
   <%= f.submit%>
   <% end %>
