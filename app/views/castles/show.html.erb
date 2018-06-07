@@ -1,7 +1,7 @@
 
 <div class="content">
 
-  <%= link_to "Back to castles", castles_path, class: "btn btn-default show_button" %>
+  <!--   <%= link_to "Back to castles", castles_path, class: "btn btn-default show_button" %> -->
   <div class=" show_banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%), url('<%= cl_image_path @castle.photo %>');">
     <div class="banner-content">
       <h1><%= @castle.name %></h1>
@@ -11,11 +11,11 @@
       <button class="btn btn-primary show_button"> Book this Castle</button>
       <% end %>
       <%= link_to edit_castle_path(@castle) do %>
-      <button class="btn btn-primary show_button" id="edit_castle"> Edit Castle</button>
+      <button class="btn  show_button" id="edit_castle"> Edit Castle</button>
       <% end %>
       <%= link_to castle_path, method: :delete,
       data: { confirm: "Are you sure?" } do %>
-      <button class="btn btn-primary show_button" id="delete_castle">Delete Castle</button>
+      <button class="btn  show_button" id="delete_castle">Delete Castle</button>
       <% end %>
     </div>
   </div>
@@ -23,19 +23,31 @@
 <div class="main_container">
   <div class="details_grid">
     <div class="details_list">
-      Name: <%= @castle.name %> <br>
-      Summary: <%= @castle.summary %> <br>
-      Price per night: <%= @castle.price_per_night %> <br>
+      <h2> <%= @castle.summary %></h2>
+      <p>Price per night: <%= @castle.price_per_night %> </p>
+      <p>Number of guests: <%= @castle.no_of_guests %> </p>
+      <p>Number of bedrooms: <%= @castle.no_of_bedrooms %> </p>
     </div>
+    <!-- </div> -->
     <div class="amenities_grid">
-      <% @castle.amenities.each do |a| %>
-      <div> <%= image_tag(a.photo); %><%=  a.name %> </div>
-      <% end %>
-
+      <h2>Amenities</h2>
+      <div class="amenity_items_wrapper">
+        <% @castle.amenities.each do |a| %>
+        <div class="amenity_box">
+          <%= image_tag(a.photo, class: "amenity_icon"); %><%=  a.name %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="reviews_grid">
+      <h2>Review</h2>
+      <div class="review_item">
+        <%= @castle.review %>
+      </div>
     </div>
   </div>
   <div>
-    <div id="map" ></div>
+    <div id="map2" ></div>
   </div>
 </div>
 
@@ -54,7 +66,7 @@
   styles: [] // TODO: replace [] with an array from https://snazzymaps.com/
 };
 
-var map = new google.maps.Map(document.getElementById('map'), myOptions);
+var map = new google.maps.Map(document.getElementById('map2'), myOptions);
 var marker = new google.maps.Marker({
   position: myLatlng,
   map: map,

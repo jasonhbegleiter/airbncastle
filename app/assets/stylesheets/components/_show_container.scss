@@ -2,34 +2,108 @@
   display: flex;
 }
 
-#map {
+#map2 {
   flex: 0 0 450px;
-  height: 100vh;
+  height: 45vh;
   position: sticky !important; /* !important to override Gmaps inline CSS */
   top: 0 !important;
   width: 30vw !important;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .details_grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 65% 35%;
+  grid-template-rows: 60% 40%;
+  margin-top: 5px;
+  margin-left: 5px;
+  width: 65vw !important;
 }
 
 .details_list {
   grid-row: 1 / span 1;
   grid-column: 1 / span 3;
+  background-color: white;
+  margin: 5px;
+  font-family: Raleway;
+}
+
+.details_list h2 {
+  font-family: Raleway;
+  color: #EE7279;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  padding: 10px;
+}
+
+.details_list p {
+  text-align: left;
+  font-family: Raleway;
+
 }
 
 .amenities_grid {
   display: flex;
+  flex-direction: column;
   grid-row: 2 / span 1;
   grid-column: 1 / span 2;
+  background-color: white;
+  margin: 5px;
+  font-family: Raleway;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.amenities_grid h2 {
+  font-family: Raleway;
+  font-weight: bold;
+  font-size: 20px;
+  // padding: 10px;
+  color: #EE7279;
+  // self-align: top;
+}
+
+.amenity_box {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  // self-align: center;
+  padding: 5px;
+}
+
+.amenity_items_wrapper{
+  flex-direction: row;
+  display: flex;
+  padding: 10px;
 }
 
 .reviews_grid {
+  display: flex;
+  flex-direction: column;
   grid-row: 2 / span 1;
   grid-column: 3 / span 1;
+  background-color: white;
+  margin: 5px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.reviews_grid h2 {
+  font-family: Raleway;
+  font-weight: bold;
+  font-size: 20px;
+  color: #EE7279;
+  // self-align: top;
+}
+
+.review_item {
+  font-family: Raleway;
+  text-align: left;
+  padding: 10px;
 }
 
 .show_button {
@@ -59,4 +133,10 @@
   justify-content: center;
   position: relative;
   margin-top: 0;
+}
+
+.amenity_icon {
+  width: 30px;
+  height: 30px;
+  padding: 0 2px;
 }
