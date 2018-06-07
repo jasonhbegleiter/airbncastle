@@ -5,6 +5,7 @@ class CastlesController < ApplicationController
   end
 
   def show
+    # raise
   end
 
   def new
