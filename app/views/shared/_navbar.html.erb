@@ -3,7 +3,12 @@
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "airbncastle.png", height: 50 %>
   <% end %>
-  <div class="nav-text-center"><p>AirbnCastle</p></div>
+    <div class="nav-text-center">
+  <%= link_to root_path do %>
+    <p>AirbnCastle</p>
+  <% end %>
+  </div>
+
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
