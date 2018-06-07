@@ -41,34 +41,37 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-4">
-          <%= link_to castle_path(Castle.find(2)), :action => 'go' do %>
-          <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), url('<%= cl_image_path Castle.find(2).photo, height: 400, crop: :fill %>');">
+          <% ca1 = Castle.where(name: "Disney Castle").first %>
+          <%= link_to castle_path(ca1), :action => 'go' do %>
+          <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), url('<%= cl_image_path ca1.photo, height: 400, crop: :fill %>');">
             <div class="card-category"><h5>ENTIRE CHATEAU</h5></div>
             <div class="card-description">
-              <h3><%= Castle.find(2).name %></h3>
-              <p><%= Castle.find(2).summary %></p>
+              <h3><%= ca1.name%></h3>
+              <p><%= ca1.summary %></p>
             </div>
           </div>
           <% end %>
         </div>
         <div class="col-xs-12 col-sm-4">
-          <%= link_to castle_path(Castle.find(3)), :action => 'go' do %>
-          <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), url('<%= cl_image_path Castle.find(3).photo, height: 400, crop: :fill %>');">
+        <% ca2 = Castle.where(name: "Winterfell").first %>
+          <%= link_to castle_path(ca2), :action => 'go' do %>
+          <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), url('<%= cl_image_path ca2.photo, height: 400, crop: :fill %>');">
             <div class="card-category"><h5>ENTIRE CHATEAU</h5></div>
             <div class="card-description">
-              <h3><%= Castle.find(3).name %></h3>
-              <p><%= Castle.find(3).summary %></p>
+              <h3><%= ca2.name %></h3>
+              <p><%= ca2.summary %></p>
             </div>
           </div>
           <% end %>
         </div>
         <div class="col-xs-12 col-sm-4">
-          <%= link_to castle_path(Castle.find(1)), :action => 'go' do %>
-          <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), url('<%= cl_image_path Castle.find(1).photo, height: 400, crop: :fill %>');">
+        <% ca3 = Castle.where(name: "Hogwarts").first %>
+          <%= link_to castle_path(ca3), :action => 'go' do %>
+          <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), url('<%= cl_image_path ca3.photo, height: 400, crop: :fill %>');">
             <div class="card-category"><h5>ENTIRE CHATEAU</h5></div>
             <div class="card-description">
-              <h3><%= Castle.find(1).name %></h3>
-              <p><%= Castle.find(1).summary %></p>
+              <h3><%= ca3.name %></h3>
+              <p><%= ca3.summary %></p>
             </div>
           </div>
           <% end %>

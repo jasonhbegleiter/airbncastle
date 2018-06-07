@@ -1,3 +1,44 @@
+require 'pry-byebug'
+
+puts 'Destroying all previous users...'
+if !User.all.empty?
+  User.all.each do |u|
+    User.destroy(u.id)
+  end
+end
+puts "Finished!"
+
+puts 'Destroying all previous countries, cities, castles, castleamenities, bookings...'
+if !Country.all.empty?
+  Country.all.each do |c|
+    Country.destroy(c.id)
+  end
+end
+# Destroys:
+#   Country
+#     City
+#       Castle
+#         CastleAmenity
+#         Booking (attempt)
+puts 'Finished!'
+
+puts "Checking for amenities..."
+
+if Amenity.all.size < 8
+  puts 'Creating those key amenities...'
+  wifi = Amenity.create!(name: 'Wifi', photo: 'wifi.png')
+  pool = Amenity.create!(name: 'Swimming pool', photo: 'pool.png')
+  quidditch = Amenity.create!(name: 'Quidditch pitch', photo: 'quidditch.png')
+  carpet = Amenity.create!(name: 'Magic carpets', photo: 'carpet.png')
+  knight = Amenity.create!(name: 'Personal Guard', photo: 'knight.png')
+  wand = Amenity.create!(name: 'Magic', photo: 'magic_wand.png')
+  servant = Amenity.create!(name: 'Enchanted House Servants', photo: 'servant.png')
+  washer = Amenity.create!(name: 'Washer/Dryer', photo: 'washer.png')
+end
+
+
+puts 'Finished!'
+
 puts 'Creating your marvellous countries...'
 scot = Country.create!(name: 'Scotland')
 wal = Country.create!(name: 'Wales')
@@ -30,6 +71,7 @@ norm = City.new(name: 'Normandy')
 norm.country = fra
 norm.save
 puts 'Finished!'
+
 
 puts 'Creating your marvellous users...'
 u1 = User.create!(email: '1@1.com', password: '123456')
@@ -117,18 +159,16 @@ ca6.remote_photo_url = 'http://fhmedien.de/wp-content/uploads/2012/10/MG_8440_k_
 ca6.save
 puts 'Finished!'
 
-puts 'Creating those key amenities...'
-wifi = Amenity.create!(name: 'Wifi', photo: 'wifi.png')
-pool = Amenity.create!(name: 'Swimming pool', photo: 'pool.png')
-quidditch = Amenity.create!(name: 'Quidditch pitch', photo: 'quidditch.png')
-carpet = Amenity.create!(name: 'Magic carpets', photo: 'carpet.png')
-knight = Amenity.create!(name: 'Personal Guard', photo: 'knight.png')
-wand = Amenity.create!(name: 'Magic', photo: 'magic_wand.png')
-servant = Amenity.create!(name: 'Enchanted House Servants', photo: 'servant.png')
-washer = Amenity.create!(name: 'Washer/Dryer', photo: 'washer.png')
+wifi = Amenity.where(name: 'Wifi').first
+pool = Amenity.where(name: 'Swimming pool').first
+quidditch = Amenity.where(name: 'Quidditch pitch').first
+carpet = Amenity.where(name: 'Magic carpets').first
+knight = Amenity.where(name: 'Personal Guard').first
+wand = Amenity.where(name: 'Magic').first
+servant = Amenity.where(name: 'Enchanted House Servants').first
+washer = Amenity.where(name: 'Washer/Dryer').first
 
-puts 'Finished!'
-
+# binding.pry
 
 puts 'Creating castle_amenities links...'
 CastleAmenity.create!(castle: ca1, amenity: quidditch)
