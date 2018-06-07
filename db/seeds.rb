@@ -1,5 +1,3 @@
-require 'pry-byebug'
-
 puts 'Destroying all previous users...'
 if !User.all.empty?
   User.all.each do |u|
@@ -168,7 +166,7 @@ wand = Amenity.where(name: 'Magic').first
 servant = Amenity.where(name: 'Enchanted House Servants').first
 washer = Amenity.where(name: 'Washer/Dryer').first
 
-# binding.pry
+
 
 puts 'Creating castle_amenities links...'
 CastleAmenity.create!(castle: ca1, amenity: quidditch)
