@@ -19,19 +19,27 @@ class BookingsController < ApplicationController
     @booking.accepted = false
     @booking.start_date = Date.new(booking_params["start_date(1i)"].to_i, booking_params["start_date(2i)"].to_i, booking_params["start_date(3i)"].to_i)
     bookings = Booking.where(castle_id: params[:castle_id])
-    new_booking_start = @booking.start_date.to_date
-    new_booking_end = @booking.start_date.to_date + @booking.no_of_nights
-    unavailable = available(bookings, new_booking_start, new_booking_end).include?(false)
-    if unavailable
-      @unavailable = unavailable
-      render :new
+    if params[:no_of_nights].nil?
+      new_booking_start = @booking.start_date
+      new_booking_end = @booking.start_date
     else
-      @booking.user = current_user
-      @booking.castle = @castle
-      @booking.completed = false
-      @booking.save
-      redirect_to booking_path(@booking)
+      new_booking_start = @booking.start_date.to_date
+      new_booking_end = @booking.start_date.to_date + @booking.no_of_nights
     end
+      unavailable = available(bookings, new_booking_start, new_booking_end).include?(false)
+      if unavailable
+        @unavailable = unavailable
+        render :new
+      else
+        @booking.user = current_user
+        @booking.castle = @castle
+        @booking.completed = false
+        if @booking.save
+          redirect_to booking_path(@booking)
+        else
+          render :new
+        end
+      end
   end
 
   private
