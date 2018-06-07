@@ -4,7 +4,7 @@
 
 #map2 {
   flex: 0 0 450px;
-  height: 45vh;
+  height: 50vh;
   position: sticky !important; /* !important to override Gmaps inline CSS */
   top: 0 !important;
   width: 30vw !important;
@@ -15,7 +15,7 @@
 .details_grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 60% 40%;
+  grid-template-rows: 65% 35%;
   margin-top: 5px;
   margin-left: 5px;
   width: 65vw !important;
@@ -41,7 +41,8 @@
 .details_list p {
   text-align: left;
   font-family: Raleway;
-
+  padding: 5px;
+  text-align: center;
 }
 
 .amenities_grid {
