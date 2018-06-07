@@ -1,5 +1,6 @@
 <div class="castle-form">
   <%= simple_form_for [@castle, @booking] do |f| %>
+    <%= f.error_notification %>
 
   <p class="light-form-label">Start Date</p>
   <div class="form-group">
