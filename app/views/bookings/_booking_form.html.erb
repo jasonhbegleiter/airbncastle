@@ -18,14 +18,6 @@
   <div class="form-group">
     <%= f.input_field :no_confirmed_guests, class: 'form-control', as: :integer, collection: 1..15, placeholder: '25' %>
   </div>
-  <% if params[:no_of_nights] == nil %>
-  <% else %>
-    <% if @unavailable %>
-    <div id="sweet-alert-no" class="btn btn-primary">Check availability</div>
-    <% else %>
-     <div id="sweet-alert-yes" class="btn btn-primary">Check availability</div>
-     <% end %>
-   <% end %>
 
   <%= f.submit%>
   <% end %>

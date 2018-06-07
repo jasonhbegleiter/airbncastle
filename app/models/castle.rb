@@ -3,6 +3,7 @@ class Castle < ApplicationRecord
   belongs_to :user
   has_many :castle_amenities, dependent: :destroy
   has_many :amenities, through: :castle_amenities
+  has_many :bookings, dependent: :destroy
   mount_uploader :photo, PhotoUploader
   geocoded_by :address
 
