@@ -1,21 +1,21 @@
 <div class="castle-form">
   <%= simple_form_for(@castle) do |f| %>
-    <%= f.error_notification %>
-    <%= f.error :base %>
+  <%= f.error_notification %>
+
 
   <p class="light-form-label">Name</p>
   <div class="form-group">
-    <%= f.text_field :name, class: 'form-control', placeholder: 'Hogwarts' %>
+    <%= f.input_field :name, class: 'form-control', as: :string, placeholder: 'Hogwarts' %>
   </div>
 
   <p class="light-form-label">Summary</p>
   <div class="form-group">
-    <%= f.text_field :summary, class: 'form-control', placeholder: 'School of Witchcraft and Wizadry' %>
+    <%= f.input_field :summary, class: 'form-control', as: :string, placeholder: 'School of Witchcraft and Wizadry' %>
   </div>
 
   <p class="light-form-label">Address</p>
   <div class="form-group">
-    <%= f.text_field :address, class: 'form-control', placeholder: 'Near Hogsmeade, Harry Potter World' %>
+    <%= f.input_field :address, class: 'form-control', as: :string, placeholder: 'Near Hogsmeade, Harry Potter World' %>
   </div>
 
   <p class="light-form-label">City</p>
@@ -58,4 +58,5 @@
 
 
   <%= f.submit%>
-  <% end %></div>
+  <% end %>
+</div>
