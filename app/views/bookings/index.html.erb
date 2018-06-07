@@ -9,6 +9,7 @@
   <h1 class="text-left cards-header">Your regal escapes await</h1>
   <div class="row">
     <% @bookings.each do |booking| %>
+    <%= link_to booking_path(booking), :action => 'go' do %>
     <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), url('<%= cl_image_path booking.castle.photo, height: 400, crop: :fill %>');">
         <div class="card-category"><h5>ENTIRE CHATEAU</h5></div>
@@ -17,6 +18,7 @@
           <p><%= booking.castle.address %></p>
         </div>
       </div>
+      <% end %>
       <div class="card-footer">
         <div class="footer-links">
           <span><%= "#{booking.no_of_nights} nights, from #{booking.start_date.day} #{Date::MONTHNAMES[booking.start_date.month]} #{booking.start_date.year}    |" %></span>
@@ -28,9 +30,9 @@
     </div>
     <% end %>
   </div>
-      <%= link_to "Back to castles", castles_path, class: "generic-link" %>
+      <%= link_to "Back to castles", castles_path, class: "btn btn-default" %>
     <br>
-    <%= link_to "Back to homepage", "/", class: "generic-link" %>
+    <%= link_to "Back to homepage", "/", class: "btn btn-default" %>
 </div>
 
 
